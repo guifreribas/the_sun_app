@@ -24,20 +24,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/v1/articles/:id",
+							"raw": "{{baseUrl}}/api/v1/article/:id",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
 								"v1",
-								"articles",
+								"article",
 								":id"
 							],
 							"variable": [
 								{
 									"key": "id",
-									"value": "PONER UN ID AQUI"
+									"value": "67018cedb4a20650ebfb6991"
 								}
 							]
 						}
