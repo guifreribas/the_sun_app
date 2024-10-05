@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Article } from '../models/article';
+import { Article, GetArticlesResponse } from '../models/article';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +12,8 @@ export class ArticleService {
   // constructor(private http: HttpClient) { }
 
   //All article
-  getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(`${this.baseUrl}/articles`);
+  getArticles(): Observable<GetArticlesResponse> {
+    return this.http.get<GetArticlesResponse>(`${this.baseUrl}/articles`);
   }
 
   getArticleById(id: string): Observable<Article> {
