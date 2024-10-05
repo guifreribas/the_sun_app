@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 //crear documento 
 
 interface ArticleDocument extends mongoose.Document{
+
     _id: mongoose.Types.ObjectId,
     title: String,
     description: String,
