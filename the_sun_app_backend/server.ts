@@ -6,8 +6,8 @@ import cors from 'cors'
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const HOST = `http://localhost:${PORT}`
-const METHODS = [ 'GET', 'POST']
+const HOST = `http://localhost:${PORT}`;
+const METHODS = [ 'GET', 'POST' ];
 
 
 
