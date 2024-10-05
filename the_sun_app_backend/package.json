@@ -7,7 +7,7 @@
 
     "build": "npx tsc -w", 
     "dev": "node dist/server.js",
-    "start": "npm run build & node dist/server.js"
+    "start": "npm run build && node dist/server.js"
   },
   "keywords": [],
   "author": "",
