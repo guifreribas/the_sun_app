@@ -35,7 +35,11 @@ export const postMain = async (
 	if (!article) {
 		throw new Error("Article not found");
 	}
+	const existingMain = await mainArticle.findOne({ article_id: article._id });
 
+	if (existingMain) {
+		return null;
+	}
 	const main = await mainArticle.create({
 		article_id: article._id,
 		title: article.title,
@@ -56,7 +60,7 @@ export const postMain = async (
 
 export const getMain = async (): Promise<MainArticle | null> => {
 	const main = await mainArticle.findById(testArticleId);
-
+	console.log("main: ", main);
 	if (!main) {
 		// throw new Error('There is no main article available')
 		return null;
