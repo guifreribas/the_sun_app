@@ -33,10 +33,10 @@ const muckData = [
   styleUrl: './main.component.scss',
 })
 export class MainComponent {
-  @ViewChild('button1') button1: any;
-  @ViewChild('button2') button2: any;
-  @ViewChild('button3') button3: any;
-  @ViewChild('button4') button4: any;
+  @ViewChild('button1') button1!: ElementRef<HTMLButtonElement>;
+  @ViewChild('button2') button2!: ElementRef<HTMLButtonElement>;
+  @ViewChild('button3') button3!: ElementRef<HTMLButtonElement>;
+  @ViewChild('button4') button4!: ElementRef<HTMLButtonElement>;
 
   public article: Article | undefined;
   public articles: Article[] | undefined;
@@ -69,5 +69,26 @@ export class MainComponent {
   onSelectTarget(target: number) {
     console.log(target);
     this.muckDataIndex = target - 1;
+    if (target === 1) {
+      this.button1.nativeElement.classList.add('active');
+      this.button2.nativeElement.classList.remove('active');
+      this.button3.nativeElement.classList.remove('active');
+      this.button4.nativeElement.classList.remove('active');
+    } else if (target === 2) {
+      this.button1.nativeElement.classList.remove('active');
+      this.button2.nativeElement.classList.add('active');
+      this.button3.nativeElement.classList.remove('active');
+      this.button4.nativeElement.classList.remove('active');
+    } else if (target === 3) {
+      this.button1.nativeElement.classList.remove('active');
+      this.button2.nativeElement.classList.remove('active');
+      this.button3.nativeElement.classList.add('active');
+      this.button4.nativeElement.classList.remove('active');
+    } else if (target === 4) {
+      this.button1.nativeElement.classList.remove('active');
+      this.button2.nativeElement.classList.remove('active');
+      this.button3.nativeElement.classList.remove('active');
+      this.button4.nativeElement.classList.add('active');
+    }
   }
 }
