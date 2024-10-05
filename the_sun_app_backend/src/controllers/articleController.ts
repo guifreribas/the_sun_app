@@ -36,7 +36,7 @@ export default class ArticleController {
     try {
       const articles = await getAll();
       if (!articles || articles.length === 0) {
-        res.status(200).json({ message: "No articles found", results: [] });
+        res.status(200).json({ message: "No articles found" });
         return;
       }
       res.json({

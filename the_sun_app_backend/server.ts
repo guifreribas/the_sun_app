@@ -12,6 +12,7 @@ const ALLOWED_ORIGINS = [
   `http://localhost:${PORT}`,
   `http://localhost:${APP_ORIGIN}`,
 ];
+
 const METHODS = ["GET", "POST"];
 
 //middlewares
@@ -21,16 +22,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (
-        typeof origin === "string" &&
-        (ALLOWED_ORIGINS.indexOf(origin) !== -1 || !origin)
-      ) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
+      // Permite solicitudes sin origen (como aplicaciones móviles o curl)
+      if (!origin) return callback(null, true);
+
+      if (ALLOWED_ORIGINS.indexOf(origin) === -1) {
+        var msg =
+          "The CORS policy for this site does not allow access from the specified Origin.";
+        return callback(new Error(msg), false);
       }
+      return callback(null, true);
     },
     methods: METHODS,
+    credentials: true,
   })
 );
 //router
