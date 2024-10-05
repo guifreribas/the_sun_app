@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { CommonModule } from "@angular/common";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+	selector: "app-navbar",
+	standalone: true,
+	imports: [CommonModule],
+	templateUrl: "./navbar.component.html",
+	styleUrl: "./navbar.component.scss",
 })
 export class NavbarComponent {
+	public isMenuOpen = false;
 
+	onOpenMenu() {
+		this.isMenuOpen = true;
+	}
+
+	onCloseMenu() {
+		this.isMenuOpen = false;
+	}
 }
