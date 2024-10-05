@@ -8,10 +8,11 @@ import articleRouter from "./src/routes/article.js";
 
 const app = express();
 
-// const ALLOWED_ORIGINS = [
-//   `http://localhost:${PORT}`,
-//   `http://localhost:${APP_ORIGIN}`,
-// ];
+
+const ALLOWED_ORIGINS = [
+  `http://localhost:${PORT}`,
+  `http://localhost:${APP_ORIGIN}`,
+];
 const METHODS = ["GET", "POST"];
 
 //middlewares
@@ -20,8 +21,20 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: '*',
+    origin: function (origin, callback) {
+      // Permite solicitudes sin origen (como aplicaciones móviles o curl)
+      if (!origin) return callback(null, true);
+
+      if (ALLOWED_ORIGINS.indexOf(origin) === -1) {
+        var msg =
+          "The CORS policy for this site does not allow access from the specified Origin.";
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
+
     methods: METHODS,
+    credentials: true,
   })
 );
 //router
