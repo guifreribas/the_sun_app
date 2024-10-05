@@ -3,7 +3,7 @@ import express from "express";
 import logger from "morgan";
 import connectToMongoDB from "./src/DB/connectToMongo.js";
 import cors from "cors";
-import { PORT } from "./src/constants/env.js";
+import { APP_ORIGIN, PORT } from "./src/constants/env.js";
 import articleRouter from "./src/routes/article.js";
 
 const app = express();
