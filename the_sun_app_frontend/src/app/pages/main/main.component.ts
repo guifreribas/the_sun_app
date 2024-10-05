@@ -12,6 +12,11 @@ import { firstValueFrom } from "rxjs";
 export class MainComponent {
 	private articleService = inject(ArticleService);
 
+	ngOnInit() {
+		console.log("Main");
+		this.getArticle();
+	}
+
 	async getArticle() {
 		const articles = await firstValueFrom(
 			this.articleService.getArticleById("67018cedb4a20650ebfb6991")
