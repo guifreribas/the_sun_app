@@ -104,7 +104,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "TODO"
+						"url": "{{baseUrl}}/api/v1/sunpics/10-04-2024"
 					},
 					"response": []
 				}
