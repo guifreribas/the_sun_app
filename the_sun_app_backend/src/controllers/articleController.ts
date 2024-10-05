@@ -32,7 +32,7 @@ export default class ArticleController {
       return;
     }
   }
-  public async getAllArticles(req: Request, res: Response) {
+  public async getAllArticles(_: Request, res: Response) {
     try {
       const articles = await getAll();
       if (!articles || articles.length === 0) {

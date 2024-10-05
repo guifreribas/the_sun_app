@@ -4,7 +4,7 @@ import logger from "morgan";
 import connectToMongoDB from "./src/DB/connectToMongo.js";
 import cors from "cors";
 import { PORT } from "./src/constants/env.js";
-import articleRouter from "./src/routes/article.routes.js";
+import articleRouter from "./src/routes/article.js";
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use(
   })
 );
 //router
-app.use("api/v1", articleRouter);
+app.use("/api/v1", articleRouter);
 
 //Healt route
 // app.get('/health', (_, res) => {
