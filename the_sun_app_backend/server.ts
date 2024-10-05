@@ -4,7 +4,7 @@ import logger from "morgan";
 import connectToMongoDB from "./src/DB/connectToMongo.js";
 import cors from 'cors'
 import { PORT } from "./src/constants/env.js";
-import articleRouter from "./src/routes/articles.routes.js";
+import articleRouter from "./src/routes/articleServices.js";
 
 const app = express();
 
@@ -23,6 +23,20 @@ app.use(cors({
 }))
 //router
 app.use('api/v1', articleRouter)
+
+
+//Healt route
+// app.get('/health', (_, res) => {
+
+//     return res.status(OK).json({
+//         status:"healthy"
+//     })
+// });
+
+
+
+
+
 //listen & connect to db
 app.listen(
     PORT,
