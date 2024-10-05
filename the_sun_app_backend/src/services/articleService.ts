@@ -1,12 +1,9 @@
 
-
-
-//esquema de articulo
-
 import mongoose from "mongoose"
 import articleModel from "../DB/models/article.js"
 
-type Article = {
+//esquema de articulo
+export type Article = {
     _id: mongoose.Types.ObjectId,
     title: String,
     description: String,
