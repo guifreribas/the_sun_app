@@ -2,9 +2,9 @@ import express from "express"
 import logger from "morgan";
 import connectToMongoDB from "./src/DB/connectToMongo.js";
 import cors from 'cors'
+import { PORT } from "./src/constants/env.js";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 const HOST = `http://localhost:${PORT}`;
 const METHODS = [ 'GET', 'POST' ];
