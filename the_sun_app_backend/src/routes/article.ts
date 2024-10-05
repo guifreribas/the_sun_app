@@ -11,13 +11,7 @@ articleRouter.get("/articles", articleController.getAllArticles);
 
 articleRouter.get("/article/:id", articleController.getOneArticle);
 
-articleRouter.get(
-  "/main/article"
-  //crear controlador getMainArt
-  //devuelve objeto type MainArticle
-  //res.body = data
-  //res.status = 200
-);
+articleRouter.get("/main/article", mainController.getMainArticle);
 articleRouter.post("/publish/article", articleController.createArticle);
 articleRouter.post("/publish/main", mainController.createMainArticle);
 articleRouter.get(
