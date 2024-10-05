@@ -7,7 +7,7 @@ import mongoose from "mongoose"
 import articleModel from "../DB/models/article.js"
 
 type Article = {
-    id: mongoose.Types.ObjectId,
+    _id: mongoose.Types.ObjectId,
     title: String,
     description: String,
     url: String,
@@ -17,7 +17,15 @@ type Article = {
 }
 
 //test articles
-
+// const testArticle : Article = {
+//     _id: '123456789',
+//     title: 'titulo',
+//     description: 'soy una descripcion',
+//     url: 'Soy un link a un articulo muy chulo',
+//     urlToImage: 'Aqui la imagen...',
+//     createdAt: new Date(),
+//     deletedAt:  new Date(),
+// }
 
 //obtener todos los articulos
 
@@ -36,7 +44,10 @@ export const getAll = async () : Promise<[] | Promise<Article[]>> => {
 
 //obtener articulo con id
 
-export const getOne = async (id: string) => {
+// export const getOne = async (id: string): Promise<Article> | undefined => {
     
-}
+
+
+//     return 
+// }
 

@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express from "express"
 import logger from "morgan";
 import connectToMongoDB from "./src/DB/connectToMongo.js";
@@ -15,7 +16,7 @@ const METHODS = [ 'GET', 'POST' ];
 app.use(express.json())
 app.use(logger('dev'))
 app.use(express.urlencoded({extended: false}))
-app.use('api/v1/')
+// app.use('api/v1/')
 app.use(cors({
     origin: HOST,
     methods: METHODS
