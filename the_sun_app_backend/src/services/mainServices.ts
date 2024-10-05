@@ -32,10 +32,14 @@ export const postMain = async (
 
   const article = await articleModel.findById(articleId);
 
-  if (!article) {
-    throw new Error("Article not found");
-  }
+    if (!article) {
+        throw new Error("Article not found");
+    }
+const existingMain = await mainArticle.findOne({article_id: article._id})
 
+    if(existingMain){
+        return null
+    }
   const main = await mainArticle.create({
     article_id: article._id,
     title: article.title,
