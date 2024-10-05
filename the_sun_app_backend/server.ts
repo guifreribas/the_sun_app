@@ -3,12 +3,15 @@ import express from "express";
 import logger from "morgan";
 import connectToMongoDB from "./src/DB/connectToMongo.js";
 import cors from "cors";
-import { PORT } from "./src/constants/env.js";
+import { PORT, APP_ORIGIN } from "./src/constants/env.js";
 import articleRouter from "./src/routes/article.js";
 
 const app = express();
 
-const HOST = `http://localhost:${PORT}`;
+const ALLOWED_ORIGINS = [
+  `http://localhost:${PORT}`,
+  `http://localhost:${APP_ORIGIN}`,
+];
 const METHODS = ["GET", "POST"];
 
 //middlewares
@@ -17,7 +20,16 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: HOST,
+    origin: function (origin, callback) {
+      if (
+        typeof origin === "string" &&
+        (ALLOWED_ORIGINS.indexOf(origin) !== -1 || !origin)
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: METHODS,
   })
 );
