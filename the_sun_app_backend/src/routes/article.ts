@@ -6,7 +6,9 @@ const articleRouter = Router();
 const articleController = new ArticleController();
 
 articleRouter.get("/articles", articleController.getAllArticles);
+
 articleRouter.get("/article/:id", articleController.getOneArticle);
+
 articleRouter.get(
   "/main/article"
   //crear controlador getMainArt
@@ -15,8 +17,15 @@ articleRouter.get(
   //res.status = 200
 );
 articleRouter.post("/publish/article", articleController.createArticle);
+
 articleRouter.post(
   "/publish/main"
+  //crear controlador para crear nuevo articulo principal
+  //res.body = { prompt: string, summary: string }
+  //res.status = 204
+);
+articleRouter.get(
+  "/main/article"
   //crear controlador para crear nuevo articulo principal
   //res.body = { prompt: string, summary: string }
   //res.status = 204
