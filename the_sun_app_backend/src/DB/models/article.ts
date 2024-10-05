@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 //crear documento 
 
 interface ArticleDocument extends mongoose.Document{
-    id: mongoose.Types.ObjectId,
+
+    _id: mongoose.Types.ObjectId,
     title: String,
     description: String,
     url: String,
@@ -13,7 +14,6 @@ interface ArticleDocument extends mongoose.Document{
 }
 
 const articleSchema = new mongoose.Schema({
-    id: {type: mongoose.Types.ObjectId, required: true},
     title: { type: String, required: true},
     description: { type: String, required: true},
     url: { type: String, required: true},
