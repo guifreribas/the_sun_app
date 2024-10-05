@@ -3,7 +3,9 @@ import mainArticle from "../DB/models/mainArticle.js"
 import articleModel from "../DB/models/article.js"
 
 
-// const testArticleId = "67018cedb4a20650ebfb6991"
+const testArticleId = "67018cedb4a20650ebfb6991"
+
+
 type MainArticle = {
     _id: mongoose.Types.ObjectId,
     article_id: mongoose.Types.ObjectId,
@@ -54,13 +56,15 @@ export const postMain = async (data: dataToMain) : Promise<MainArticle | null >=
 
     return main
 }
-// export const getMain = async () : Promise<MainArticle | null >=> {
 
-//     const main = await mainArticle.find()
+export const getMain = async () : Promise<MainArticle | null >=> {
 
-//     if(!main){
-//         // throw new Error('There is no main article available')
-//         return null
-//     }
+    const main = await mainArticle.findById(testArticleId)
 
-//     return main
+    if(!main){
+        // throw new Error('There is no main article available')
+        return null
+    }
+
+    return main
+}

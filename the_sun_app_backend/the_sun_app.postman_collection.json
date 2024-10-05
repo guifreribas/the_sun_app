@@ -51,7 +51,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Titulo del articulo\",\r\n    \"description\": \"Soy una descripcion\",\r\n    \"url\":\"#\", \r\n    \"urlToImage\": \"#\"\r\n}",
+							"raw": "{\r\n    \"title\": \"Titulo del articulo\",\r\n    \"description\": \"Soy una descripcion\",\r\n    \"url\":\"#\", \r\n    \"urlToImage\": \"https://sdo.gsfc.nasa.gov/assets/img/latest/latest_1024_0193.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -73,6 +73,24 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseUrl}}/api/v1/main/article"
+					},
+					"response": []
+				},
+				{
+					"name": "postMain",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"articleId\": \"67018cedb4a20650ebfb6991\", \r\n    \"prompt\": \"soy un string\", \r\n    \"summary\": \"soy un string\"\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v1/publish/main"
 					},
 					"response": []
 				}

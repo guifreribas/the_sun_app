@@ -8,7 +8,9 @@ const articleController = new ArticleController();
 const mainController = new MainController();
 
 articleRouter.get("/articles", articleController.getAllArticles);
+
 articleRouter.get("/article/:id", articleController.getOneArticle);
+
 articleRouter.get(
   "/main/article"
   //crear controlador getMainArt
@@ -18,6 +20,12 @@ articleRouter.get(
 );
 articleRouter.post("/publish/article", articleController.createArticle);
 articleRouter.post("/publish/main", mainController.createMainArticle);
+articleRouter.get(
+  "/main/article"
+  //crear controlador para crear nuevo articulo principal
+  //res.body = { prompt: string, summary: string }
+  //res.status = 204
+);
 articleRouter.get(
   "/sunpics/:date"
   //pasar fecha por req.params
