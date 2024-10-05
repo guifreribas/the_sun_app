@@ -1,6 +1,12 @@
-<article class="w-full mx-auto border grid items-center">
-    <video src="/assets/videos/sun1.mp4" autoplay loop muted></video>
-    <h1>Welcome to The Sun App</h1>
-    <p>This is a sample text to show how the app works.</p>
-    <button>I want to know more</button>
+<article class="relative w-full mx-auto grid items-center min-h-96">
+    <video src="/assets/videos/sun1.mp4" autoplay loop muted
+        class="object-cover absolute top-0 left-0 w-full h-full "></video>
+    <section class="text-black text-center max-w-2xl py-8 rounded-lg m-8" style="backdrop-filter: blur(20px);">
+
+        <h1 class="text-4xl py-4 font-bold">Welcome to The Sun App</h1>
+        <p class="text-2xl text-wrap mb-4">This is a sample text to show how the app works.</p>
+        <a routerLink="/home"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">I
+            want to know more</a>
+    </section>
 </article>
