@@ -67,28 +67,33 @@ export class MainComponent {
   }
 
   onSelectTarget(target: number) {
-    console.log(target);
-    this.muckDataIndex = target - 1;
+    const classes = ['active', 'text-gray-900', 'bg-gray-100'];
+    classes.forEach((className) => {
+      this.button1.nativeElement.classList.remove(className);
+      this.button2.nativeElement.classList.remove(className);
+      this.button3.nativeElement.classList.remove(className);
+      this.button4.nativeElement.classList.remove(className);
+    });
+
     if (target === 1) {
       this.button1.nativeElement.classList.add('active');
-      this.button2.nativeElement.classList.remove('active');
-      this.button3.nativeElement.classList.remove('active');
-      this.button4.nativeElement.classList.remove('active');
+      this.button1.nativeElement.classList.add('text-gray-900');
+      this.button1.nativeElement.classList.add('bg-gray-100');
     } else if (target === 2) {
-      this.button1.nativeElement.classList.remove('active');
       this.button2.nativeElement.classList.add('active');
-      this.button3.nativeElement.classList.remove('active');
-      this.button4.nativeElement.classList.remove('active');
+      this.button2.nativeElement.classList.add('text-gray-900');
+      this.button2.nativeElement.classList.add('bg-gray-100');
+      this.button1.nativeElement.classList.add('bg-white');
     } else if (target === 3) {
-      this.button1.nativeElement.classList.remove('active');
-      this.button2.nativeElement.classList.remove('active');
       this.button3.nativeElement.classList.add('active');
-      this.button4.nativeElement.classList.remove('active');
+      this.button3.nativeElement.classList.add('text-gray-900');
+      this.button3.nativeElement.classList.add('bg-gray-100');
+      this.button1.nativeElement.classList.add('bg-white');
     } else if (target === 4) {
-      this.button1.nativeElement.classList.remove('active');
-      this.button2.nativeElement.classList.remove('active');
-      this.button3.nativeElement.classList.remove('active');
       this.button4.nativeElement.classList.add('active');
+      this.button4.nativeElement.classList.add('text-gray-900');
+      this.button4.nativeElement.classList.add('bg-gray-100');
+      this.button1.nativeElement.classList.add('bg-white');
     }
   }
 }
