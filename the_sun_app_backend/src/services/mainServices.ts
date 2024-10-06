@@ -5,83 +5,82 @@ import articleModel from "../DB/models/article.js";
 const testArticleId = "6701b8d6fc784065532c0c84";
 
 type MainArticle = {
-	_id: mongoose.Types.ObjectId;
-	article_id: mongoose.Types.ObjectId;
-	title: String;
-	description: String;
-	url: String;
-	urlToImage: String;
-	prompt: String;
-	summary: String;
-	createdAt: Date;
-	deletedAt: Date;
+  _id: mongoose.Types.ObjectId;
+  article_id: mongoose.Types.ObjectId;
+  title: String;
+  description: String;
+  url: String;
+  urlToImage: String;
+  prompt: String;
+  summary: String;
+  createdAt: Date;
+  deletedAt: Date;
 };
 
 //Testing info
 
 type dataToMain = {
-	articleId: string;
-	prompt: string;
-	summary: string;
+  articleId: string;
+  prompt: string;
+  summary: string;
 };
 
 export const postMain = async (
-	data: dataToMain
+  data: dataToMain
 ): Promise<MainArticle | null> => {
-	const { articleId, prompt, summary } = data;
+  const { articleId, prompt, summary } = data;
 
-	const article = await articleModel.findById(articleId);
+  const article = await articleModel.findById(articleId);
 
-	if (!article) {
-		throw new Error("Article not found");
-	}
-	const existingMain = await mainArticle.findOne({ article_id: article._id });
+  if (!article) {
+    throw new Error("Article not found");
+  }
+  const existingMain = await mainArticle.findOne({ article_id: article._id });
 
-	if (existingMain) {
-		return null;
-	}
-	const main = await mainArticle.create({
-		article_id: article._id,
-		title: article.title,
-		description: article.description,
-		url: article.url,
-		urlToImage: article.urlToImage,
-		prompt,
-		summary,
-	});
+  if (existingMain) {
+    return null;
+  }
+  const main = await mainArticle.create({
+    article_id: article._id,
+    title: article.title,
+    description: article.description,
+    url: article.url,
+    urlToImage: article.urlToImage,
+    prompt,
+    summary,
+  });
 
-	if (!main) {
-		// throw new Error('There is no main article available')
-		return null;
-	}
+  if (!main) {
+    console.error("There is no main article available");
+    return null;
+  }
 
-	return main;
+  return main;
 };
 
 export const getMain = async (): Promise<MainArticle | null> => {
-	const main = await mainArticle.findById(testArticleId);
-	console.log("main: ", main);
-	if (!main) {
-		// throw new Error('There is no main article available')
-		return null;
-	}
+  const main = await mainArticle.findById(testArticleId);
+  console.log("main: ", main);
+  if (!main) {
+    console.error("There is no main article available");
+    return null;
+  }
 
-	return main;
+  return main;
 };
-export const modify =  async (data: dataToMain): Promise<MainArticle | null> => {
-	const { articleId, prompt, summary } = data;
+export const modify = async (data: dataToMain): Promise<MainArticle | null> => {
+  const { articleId, prompt, summary } = data;
 
-	const main = await mainArticle.findById(testArticleId);
-	console.log("main: ", main);
-	if (!main) {
-        console.error('error in modify service')
-		return null;
-	}
+  const main = await mainArticle.findById(testArticleId);
+  if (!main) {
+    console.error("error in modify service");
+    return null;
+  }
 
-	const updated = await articleModel.findByIdAndUpdate( articleId, { prompt, summary });
-
-    console.log("updated", updated)
-
-
-	return main;
+  const updated = await mainArticle.findByIdAndUpdate(
+    articleId,
+    { $set: { prompt, summary } },
+    { new: true }
+  );
+  return updated;
 };
