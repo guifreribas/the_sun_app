@@ -3,62 +3,76 @@
 <section class="relative w-full max-h-[600px] h-full p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
   <div class="absolute top-[-140px] left-0" id="news"></div>
 
+
   <article
     class=" relative flex justify-start items-end rounded-lg overflow-hidden shadow-sm border border-gray-700 hover:border-transparent hover:cursor-pointer hover:opacity-80 transition-all duration-150">
-    <img [src]="article1?.urlToImage" [alt]="article1?.title" class="absolute w-full m-auto object-cover" />
-    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/70 to-transparent">
-    </div>
-    <div class="relative p-4">
-      <h2 class="text-white text-xl font-semibold">{{ article1?.title }}</h2>
-      <p class="text-gray-200 text-sm mb-2">{{ article1?.description }}</p>
-      <p class="text-gray-400 text-xs">{{ article1?.createdAt | date:'medium' }}</p>
-      <a [routerLink]="['/article', article1?.id]" class="text-blue-400 hover:text-blue-600 mt-2 block">Read more</a>
-    </div>
-  </article>
-
-  <article class="w-full h-full relative grid grid-cols-1 lg:grid-cols-2 gap-6 ">
-    <article
-      class="w-full relative flex justify-start items-end  rounded-lg overflow-hidden shadow-sm border border-gray-700 hover:border-transparent hover:cursor-pointer hover:opacity-80 transition-all duration-150">
-      <img [src]="article1?.urlToImage" [alt]="article1?.title"
-        class="absolute inset-0 m-auto w-full aspect-auto object-fill" />
+    <a [routerLink]="['/article', article1?.id]" class="w-full h-full flex justify-start items-end">
+      <img [src]="article1?.urlToImage" [alt]="article1?.title" class="absolute w-full m-auto object-cover" />
       <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/70 to-transparent">
       </div>
       <div class="relative p-4">
         <h2 class="text-white text-xl font-semibold">{{ article1?.title }}</h2>
         <p class="text-gray-200 text-sm mb-2">{{ article1?.description }}</p>
         <p class="text-gray-400 text-xs">{{ article1?.createdAt | date:'medium' }}</p>
-        <a [routerLink]="['/article', article1?.id]" class="text-blue-400 hover:text-blue-600 mt-2 block">Read more</a>
+        <!-- <a [routerLink]="['/article', article1?.id]" class="text-blue-400 hover:text-blue-600 mt-2 block">Read more</a> -->
+        <p class="text-blue-400">Read more</p>
       </div>
+    </a>
+  </article>
+
+  <article class="w-full h-full relative grid grid-cols-1 lg:grid-cols-2 gap-6 ">
+    <article
+      class="w-full relative flex justify-start items-end  rounded-lg overflow-hidden shadow-sm border border-gray-700 hover:border-transparent hover:cursor-pointer hover:opacity-80 transition-all duration-150">
+      <a [routerLink]="['/article', article1?.id]" class="w-full h-full flex justify-start items-end">
+        <img [src]="article1?.urlToImage" [alt]="article1?.title"
+          class="absolute inset-0 m-auto w-full aspect-auto object-fill" />
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/70 to-transparent">
+        </div>
+        <div class="relative p-4">
+          <h2 class="text-white text-xl font-semibold">{{ article1?.title }}</h2>
+          <p class="text-gray-200 text-sm mb-2">{{ article1?.description }}</p>
+          <p class="text-gray-400 text-xs">{{ article1?.createdAt | date:'medium' }}</p>
+          <!-- <a [routerLink]="['/article', article1?.id]" class="text-blue-400 hover:text-blue-600 mt-2 block">Read more</a> -->
+          <p class="text-blue-400">Read more</p>
+
+        </div>
+      </a>
     </article>
 
     <article class="w-full grid grid-cols-1 gap-6">
 
       <article
         class=" relative flex justify-start items-end rounded-lg overflow-hidden shadow-sm border border-gray-700 hover:border-transparent hover:cursor-pointer hover:opacity-80 transition-all duration-150">
-        <img [src]="article1?.urlToImage" [alt]="article1?.title" class="absolute w-full m-auto object-cover" />
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/70 to-transparent">
-        </div>
-        <div class="relative p-4">
-          <h2 class="text-white text-xl font-semibold">{{ article1?.title }}</h2>
-          <p class="text-gray-200 text-sm mb-2">{{ article1?.description }}</p>
-          <p class="text-gray-400 text-xs">{{ article1?.createdAt | date:'medium' }}</p>
-          <a [routerLink]="['/article', article1?.id]" class="text-blue-400 hover:text-blue-600 mt-2 block">Read
-            more</a>
-        </div>
+        <a [routerLink]="['/article', article1?.id]" class="w-full h-full flex justify-start items-end">
+          <img [src]="article1?.urlToImage" [alt]="article1?.title" class="absolute w-full m-auto object-cover" />
+          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/70 to-transparent">
+          </div>
+          <div class="relative p-4">
+            <h2 class="text-white text-xl font-semibold">{{ article1?.title }}</h2>
+            <p class="text-gray-200 text-sm mb-2">{{ article1?.description }}</p>
+            <p class="text-gray-400 text-xs">{{ article1?.createdAt | date:'medium' }}</p>
+            <!-- <a [routerLink]="['/article', article1?.id]" class="text-blue-400 hover:text-blue-600 mt-2 block">Read
+            more</a> -->
+            <p class="text-blue-400">Read more</p>
+          </div>
+        </a>
       </article>
 
       <article
         class=" relative flex justify-start items-end rounded-lg overflow-hidden shadow-sm border border-gray-700 hover:border-transparent hover:cursor-pointer hover:opacity-80 transition-all duration-150">
-        <img [src]="article1?.urlToImage" [alt]="article1?.title" class="absolute w-full m-auto object-cover" />
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/70 to-transparent">
-        </div>
-        <div class="relative p-4">
-          <h2 class="text-white text-xl font-semibold">{{ article1?.title }}</h2>
-          <p class="text-gray-200 text-sm mb-2">{{ article1?.description }}</p>
-          <p class="text-gray-400 text-xs">{{ article1?.createdAt | date:'medium' }}</p>
-          <a [routerLink]="['/article', article1?.id]" class="text-blue-400 hover:text-blue-600 mt-2 block">Read
-            more</a>
-        </div>
+        <a [routerLink]="['/article', article1?.id]" class="w-full h-full flex justify-start items-end">
+          <img [src]="article1?.urlToImage" [alt]="article1?.title" class="absolute w-full m-auto object-cover" />
+          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/70 to-transparent">
+          </div>
+          <div class="relative p-4">
+            <h2 class="text-white text-xl font-semibold">{{ article1?.title }}</h2>
+            <p class="text-gray-200 text-sm mb-2">{{ article1?.description }}</p>
+            <p class="text-gray-400 text-xs">{{ article1?.createdAt | date:'medium' }}</p>
+            <!-- <a [routerLink]="['/article', article1?.id]" class="text-blue-400 hover:text-blue-600 mt-2 block">Read
+              more</a> -->
+            <p class="text-blue-400">Read more</p>
+          </div>
+        </a>
       </article>
     </article>
   </article>
@@ -68,6 +82,5 @@
 </section>
 
 <div class="w-full p-8 py-16">
-
   <div class="max-w-75 w-full border-b border-gray-700"></div>
 </div>
