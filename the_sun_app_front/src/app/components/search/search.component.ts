@@ -1,12 +1,5 @@
-import {
-  Component,
-  ElementRef,
-  ViewChild,
-  AfterViewInit,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Datepicker, DatepickerOptions, initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-search',
@@ -15,40 +8,18 @@ import { Datepicker, DatepickerOptions, initFlowbite } from 'flowbite';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
 })
-export class SearchComponent implements OnInit, AfterViewInit {
-  @ViewChild('datepicker', { static: true }) datepickerRef!: ElementRef;
-  public datePicker!: Datepicker;
-  public date = new FormControl();
+export class SearchComponent implements OnInit {
+  public currentDate: string = '';
+  public date = new FormControl('');
 
-  ngOnInit() {
-    setTimeout(() => {
-      initFlowbite();
-    }, 100);
-
-    const options: DatepickerOptions = {
-      defaultDatepickerId: null,
-      autohide: false,
-      format: 'mm/dd/yyyy',
-      maxDate: new Date().toISOString(),
-      minDate: null,
-      orientation: 'bottom',
-      buttons: false,
-      title: null,
-      rangePicker: false,
-      onShow: () => {},
-      onHide: () => {},
-    };
-
-    this.datePicker = new Datepicker(this.datepickerRef.nativeElement, options);
-    console.log('DatePicker', this.datePicker);
+  ngOnInit(): void {
+    // Calcular la fecha actual en formato 'YYYY-MM-DD'
+    const today = new Date();
+    this.currentDate = today.toISOString().split('T')[0];
   }
 
-  ngAfterViewInit(): void {
-    console.log('Date Picker ref', this.datepickerRef.nativeElement);
-  }
-
-  dateChange() {
-    console.log('Date change', this.datePicker);
-    console.log(this.datePicker.getDate());
+  dateChange(event: Event): void {
+    const selectedDate = (event.target as HTMLInputElement).value;
+    console.log('Date selected:', selectedDate);
   }
 }
