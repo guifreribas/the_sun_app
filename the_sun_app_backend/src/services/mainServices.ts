@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import mainArticle from "../DB/models/mainArticle.js";
 import articleModel from "../DB/models/article.js";
 
-const testArticleId = "6701b8d6fc784065532c0c84";
+const testArticleId = "67025c41ccdeb8c80343dee3";
 
 type MainArticle = {
   _id: mongoose.Types.ObjectId;
