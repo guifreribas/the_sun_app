@@ -93,6 +93,24 @@
 						"url": "{{baseUrl}}/api/v1/publish/main"
 					},
 					"response": []
+				},
+				{
+					"name": "modifyMain",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6701b8d6fc784065532c0c84\", \r\n    \"prompt\": \"soy un nuevo PROMPT\", \r\n    \"summary\": \"soy un nuevo SUMMARY\"\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v1/modify/main"
+					},
+					"response": []
 				}
 			]
 		},
