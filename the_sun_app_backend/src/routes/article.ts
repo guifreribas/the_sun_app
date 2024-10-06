@@ -12,7 +12,7 @@ articleRouter.get("/article/:id", articleController.getOneArticle);
 articleRouter.get("/main/article", mainController.getMainArticle);
 articleRouter.post("/publish/article", articleController.createArticle);
 articleRouter.post("/publish/main", mainController.createMainArticle);
-// articleRouter.post("/modify/main", mainController.modifyMainArticle);
+// articleRouter.patch("/modify/main", mainController.modifyMainArticle);
 articleRouter.get("/main/article", mainController.getMainArticle);
 articleRouter.get("/sunpics/:date", mainController.getUrlFromUser);
 
