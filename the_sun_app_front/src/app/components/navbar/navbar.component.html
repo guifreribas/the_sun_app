@@ -1,11 +1,8 @@
 <header class="bg-white sticky top-0 z-50">
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-3 md:p-6 lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
-      <a routerLink="/" class="-m-1.5 p-1.5">
+      <a [routerLink]="['/']" class="-m-1.5 p-1.5">
         <h2 style="font-family: PerfectFutures" class="text-xl font-bold">The Sun App</h2>
-        <!-- <span class="sr-only">Your Company</span>
-                <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                    alt=""> -->
       </a>
     </div>
     <div class="flex lg:hidden">
@@ -21,9 +18,9 @@
     </div>
 
     <div class="hidden lg:flex lg:gap-x-12">
-      <a router="#welcome" class="text-sm font-semibold leading-6 text-gray-900">Welcome</a>
-      <a router="#news" class="text-sm font-semibold leading-6 text-gray-900">News</a>
-      <a router="#search" class="text-sm font-semibold leading-6 text-gray-900">Search</a>
+      <a routerLink="/" fragment="Welcome" class="text-sm font-semibold leading-6 text-gray-900">Welcome</a>
+      <a routerLink="/" fragment="news" class="text-sm font-semibold leading-6 text-gray-900">News</a>
+      <a routerLink="/" fragment="Search" class="text-sm font-semibold leading-6 text-gray-900">Search</a>
       <a routerLink="/about" class="text-sm font-semibold leading-6 text-gray-900">About Us</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -56,13 +53,13 @@
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
 
-            <a href="#welcome"
+            <a routerLink="/" fragment="Welcome"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Welcome</a>
-            <a href="#news"
+            <a routerLink="/" fragment="news"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">News</a>
-            <a href="#search"
+            <a routerLink="/" fragment="Search"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Search</a>
-            <a href="#search"
+            <a routerLink="/about"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About
               Us</a>
           </div>
