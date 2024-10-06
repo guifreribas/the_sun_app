@@ -38,26 +38,32 @@
 </article>-->
 
 <article id="search" class="w-full min-h-[800px] text-white pb-8">
-  <section class="container flex flex-col mx-auto pt-24 pb-12 justify-center items-center gap-4 rounded-2xl">
-    <h3 class="text-2xl font-bold">Historical sun images</h3>
-    <div class="relative max-w-xl">
-      <label for="datepicker" class="block text-sm font-medium text-gray-300 dark:text-gray-300">
-        Select date
-      </label>
-      <input 
-        id="datepicker" 
-        type="date" 
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-        min="2012-01-01" 
-        max="{{currentDate}}" 
-        placeholder="Select date"
-        (change)="dateChange($event)">
+  <section class="container flex flex-col mx-auto pt-24 pb-12 justify-start items-start gap-4 rounded-2xl">
+    <div class="w-full flex justify-start items-start gap-8">
+      <!-- Contenedor del texto y la fecha -->
+      <div class="max-w-md">
+        <h3 class="text-4xl font-bold mb-4">Historical sun images</h3>
+        <label for="datepicker" class="block text-lg font-medium text-gray-300 mb-2">
+          Select date
+        </label>
+        <input 
+          id="datepicker" 
+          type="date" 
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+          min="2012-01-01" 
+          max="{{currentDate}}" 
+          placeholder="Select date"
+          (change)="dateChange($event)">
+      </div>
+
+      <!-- Contenedor de la imagen -->
+      <div class="flex justify-center items-center">
+        <img
+          class="mx-auto rounded-xl shadow-lg transition-transform transform hover:scale-105"
+          src="https://science.nasa.gov/wp-content/uploads/2023/05/pia03149-copy.jpg?w=1024"
+          alt="Historical sun image"
+        >
+      </div>
     </div>
   </section>
-
-  <img
-    class="container mx-auto max-w-3xl rounded-xl"
-    src="https://science.nasa.gov/wp-content/uploads/2023/05/pia03149-copy.jpg?w=1024"
-    alt="Historical sun image">
 </article>
-
