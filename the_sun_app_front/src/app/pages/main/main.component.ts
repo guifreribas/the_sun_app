@@ -98,10 +98,7 @@ export class MainComponent {
 
   onSelectTarget(target: number) {
     this.muckDataIndex = target - 1;
-    // const classes = ['active', 'text-gray-900', 'bg-gray-100'];
-    // classes.forEach((className) => {
-    //   this.button1.nativeElement.classList.remove(className);
-    // });
+
     this.button1.nativeElement.classList.remove(
       ...['active', 'text-gray-900', 'bg-gray-100']
     );
@@ -119,21 +116,21 @@ export class MainComponent {
       this.button1.nativeElement.classList.add(
         ...['active', 'text-gray-900', 'bg-gray-100']
       );
+      this.button4.nativeElement.classList.add('bg-white');
     } else if (target === 2) {
       this.button2.nativeElement.classList.add(
         ...['active', 'text-gray-900', 'bg-gray-100']
       );
-      this.button1.nativeElement.classList.add('bg-white');
+      this.button4.nativeElement.classList.add('bg-white');
     } else if (target === 3) {
       this.button3.nativeElement.classList.add(
         ...['active', 'text-gray-900', 'bg-gray-100']
       );
-      this.button1.nativeElement.classList.add('bg-white');
     } else if (target === 4) {
       this.button4.nativeElement.classList.add(
         ...['active', 'text-gray-900', 'bg-gray-100']
       );
-      this.button1.nativeElement.classList.add('bg-white');
+      this.button4.nativeElement.classList.add('bg-white');
     }
   }
 }
