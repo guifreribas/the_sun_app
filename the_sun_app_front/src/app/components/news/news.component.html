@@ -1,3 +1,16 @@
-<article class="w-full mx-auto h-[900px]">
-    <h3 class="text-4xl">Newsssss</h3>
-</article>
+<section class="py-8 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    @for (article of articles; track article.id) {
+      <article class="relative shadow-lg rounded-lg overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/70 to-transparent"></div>
+        <img [src]="article.urlToImage" [alt]="article.title" class="w-full h-48 object-cover" />
+        <div class="relative p-4">
+          <h2 class="text-white text-xl font-semibold">{{ article.title }}</h2>
+          <p class="text-gray-200 text-sm mb-2">{{ article.description }}</p>
+          <p class="text-gray-400 text-xs">{{ article.createdAt | date:'medium' }}</p>
+          <a [routerLink]="['/article', article.id]" class="text-blue-400 hover:text-blue-600 mt-2 block">Read more</a>
+        </div>
+      </article>
+    } @empty {
+      <p>No articles available.</p>
+    }
+  </section>

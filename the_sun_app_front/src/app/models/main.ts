@@ -10,6 +10,6 @@ export interface Main extends Article {
 }
 
 export interface GetMainResponse {
-  results: Main[];
+  data: Main;
   message: string;
 }

@@ -5,6 +5,8 @@ import { Article, GetArticlesResponse } from '../../models/article';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MainService } from '../../services/main.service';
+import { Main } from '../../models/main';
 
 const muckData = [
   {
@@ -40,16 +42,18 @@ export class MainComponent {
 
   public article: Article | undefined;
   public articles: Article[] | undefined;
+  public main: Main | undefined;
   public selector = new FormControl();
 
   public muckData = muckData;
   public muckDataIndex = 0;
 
   private articleService = inject(ArticleService);
+  private mainService = inject(MainService);
 
   ngOnInit() {
     console.log('Main');
-    this.getArticles();
+    this.getMain();
   }
 
   async getArticle() {
@@ -66,29 +70,41 @@ export class MainComponent {
     console.log(articles);
   }
 
+  async getMain() {
+    const main = await firstValueFrom(this.mainService.getMainArticle());
+    this.main = main.data;
+    console.log(main);
+  }
+
   onSelectTarget(target: number) {
-    console.log(target);
     this.muckDataIndex = target - 1;
+    const classes = ['active', 'text-gray-900', 'bg-gray-100'];
+    classes.forEach((className) => {
+      this.button1.nativeElement.classList.remove(className);
+      this.button2.nativeElement.classList.remove(className);
+      this.button3.nativeElement.classList.remove(className);
+      this.button4.nativeElement.classList.remove(className);
+    });
+
     if (target === 1) {
       this.button1.nativeElement.classList.add('active');
-      this.button2.nativeElement.classList.remove('active');
-      this.button3.nativeElement.classList.remove('active');
-      this.button4.nativeElement.classList.remove('active');
+      this.button1.nativeElement.classList.add('text-gray-900');
+      this.button1.nativeElement.classList.add('bg-gray-100');
     } else if (target === 2) {
-      this.button1.nativeElement.classList.remove('active');
       this.button2.nativeElement.classList.add('active');
-      this.button3.nativeElement.classList.remove('active');
-      this.button4.nativeElement.classList.remove('active');
+      this.button2.nativeElement.classList.add('text-gray-900');
+      this.button2.nativeElement.classList.add('bg-gray-100');
+      this.button1.nativeElement.classList.add('bg-white');
     } else if (target === 3) {
-      this.button1.nativeElement.classList.remove('active');
-      this.button2.nativeElement.classList.remove('active');
       this.button3.nativeElement.classList.add('active');
-      this.button4.nativeElement.classList.remove('active');
+      this.button3.nativeElement.classList.add('text-gray-900');
+      this.button3.nativeElement.classList.add('bg-gray-100');
+      this.button1.nativeElement.classList.add('bg-white');
     } else if (target === 4) {
-      this.button1.nativeElement.classList.remove('active');
-      this.button2.nativeElement.classList.remove('active');
-      this.button3.nativeElement.classList.remove('active');
       this.button4.nativeElement.classList.add('active');
+      this.button4.nativeElement.classList.add('text-gray-900');
+      this.button4.nativeElement.classList.add('bg-gray-100');
+      this.button1.nativeElement.classList.add('bg-white');
     }
   }
 }
