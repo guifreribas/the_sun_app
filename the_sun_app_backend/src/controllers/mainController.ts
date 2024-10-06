@@ -4,6 +4,7 @@ import { postMain, getMain } from "../services/mainServices.js";
 import { OK } from "../constants/http.js";
 
 export default class MainController {
+  
   async createMainArticle(req: Request, res: Response): Promise<void> {
     const { articleId, prompt, summary } = req.body;
     console.log("body: ", articleId, prompt, summary);
