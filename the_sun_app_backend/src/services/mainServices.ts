@@ -68,3 +68,20 @@ export const getMain = async (): Promise<MainArticle | null> => {
 
 	return main;
 };
+export const modify =  async (data: dataToMain): Promise<MainArticle | null> => {
+	const { articleId, prompt, summary } = data;
+
+	const main = await mainArticle.findById(testArticleId);
+	console.log("main: ", main);
+	if (!main) {
+        console.error('error in modify service')
+		return null;
+	}
+
+	const updated = await articleModel.findByIdAndUpdate( articleId, { prompt, summary });
+
+    console.log("updated", updated)
+
+
+	return main;
+};
