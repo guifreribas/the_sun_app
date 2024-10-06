@@ -1,60 +1,30 @@
-<!-- <section class="container mx-auto px-4 py-8">
-  <div class="max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold mb-4">{{ article.title }}</h1>
-    <img [src]="article.urlToImage" [alt]="article.title" class="w-full h-96 object-cover rounded-lg shadow-lg mb-8" />
-    <p class="text-gray-500 text-xl mb-4">{{ article.description }}</p>
-    <div class="text-lg text-gray-800 leading-relaxed">
+<section class="container mx-auto px-4 py-12">
+    <!-- Contenedor del artículo -->
+    <article class="max-w-3xl mx-auto">
+        <!-- Título del artículo -->
+        <header class="mb-8 text-white">
+            <h1 class="text-5xl font-bold">{{ article.title }}</h1>
+            <p class="mt-2 text-sm text-gray-400">6 MIN READ</p>
+        </header>
 
-      <p>{{ article.content }}</p>
-    </div>
-    <p class="mt-4 text-base text-gray-600">{{ article.createdAt | date:'medium' }}</p>
-  </div>
-</section>-->
+        <!-- Imagen del artículo -->
+        <figure class="mb-8">
+            <div class="w-full h-64 overflow-hidden rounded-lg">
+                <img [src]="article.urlToImage" [alt]="article.title" class="w-full h-full object-cover" />
+            </div>
+        </figure>
 
+        <!-- Descripción y contenido -->
+        <div class="prose prose-lg text-white bg-gradient-to-b from-black/70 to-yellow-800 p-6 rounded-lg">
+            <p class="italic font-medium">{{ article.description }}</p>
+            <p class="mt-6">{{ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus...' }}</p>
+        </div>
 
-<!--<section class="container mx-auto px-4 py-8">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold mb-4">{{ article.title }}</h1>
-  
-      <img [src]="article.urlToImage" [alt]="article.title" class="w-full h-96 object-cover rounded-lg mb-4" />
-  
-      <p class="text-gray-500 mt-4">{{ article.description }}</p>
-  
-      <p class="mt-6 text-lg text-gray-800">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, 
-        adipiscing nec, ultricies sed-->
-
-
-        <section class="container mx-auto px-4 py-12">
-            <!-- Contenedor del artículo -->
-            <article class="max-w-3xl mx-auto">
-        
-                <!-- Título del artículo -->
-                <header class="mb-8">
-                    <h1 class="text-4xl font-bold text-gray-900">{{ article.title }}</h1>
-                    <p class="mt-2 text-sm text-gray-500">6 MIN READ</p>
-                </header>
-        
-                <!-- Imagen del artículo -->
-                <figure class="mb-8">
-                    <div class="w-full h-64 overflow-hidden rounded-lg">
-                        <img [src]="article.urlToImage" [alt]="article.title" class="w-full h-full object-cover" />
-                    </div>
-                  
-                </figure>
-        
-                <!-- Descripción y contenido -->
-                <div class="prose prose-lg text-gray-700">
-                    <p class="italic font-medium">{{ article.description }}</p>
-                    <p class="mt-6">{{ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus...' }}</p>
-                </div>
-        
-                <!-- Enlace para más información -->
-                <div class="mt-8">
-                    <a [href]="article.url" class="text-sm text-blue-600 hover:text-blue-800 hover:underline">
-                        Read the full article on NASA's website
-                    </a>
-                </div>
-            </article>
-        </section>
-        
+        <!-- Enlace para más información -->
+        <div class="mt-8">
+            <a [href]="article.url" class="text-sm text-blue-400 hover:text-blue-600 hover:underline">
+                Read the full article on NASA's website
+            </a>
+        </div>
+    </article>
+</section>
