@@ -1,0 +1,58 @@
+{
+    "main_id": "67025c41ccdeb8c80343dee3",
+    "id": "67025b74ccdeb8c80343dedf",
+    "title": "Solar storms of May 2024",
+    "description": "Solar storms of May 2024 were some of the most powerful in recent history.\n These storms caused significant disruptions in Earth's magnetic field, affecting satellite systems, communications, and even producing auroras visible far from the poles. The storms were the most intense since 1989, and space weather agencies closely monitored their impact on radiation belts and technological infrastructure.",
+    "url": "https://space-env.esa.int/solar-storms-of-may-2024/",
+    "urlToImage": "https://space-env.esa.int/wp-content/uploads/2024/10/May2024_xrayflare.jpeg",
+    "prompt": "I want a summary of this article, make it simple to understand for an adult audience, \n
+            tell me the main events and make me a list of possible effects for humans \n
+            such as lost of signal for communications of satelite affection.",
+    "summary": "In May 2024, powerful solar storms took place, including solar flares and Coronal Mass Ejections (CMEs) from May 10–13.\n 
+    \tThese storms led to a significant geomagnetic event, the strongest since 1989. \n
+    This event caused auroras to be visible much farther south than usual, such as in Greece. \n
+    The geomagnetic storm disrupted communications, affecting radio signals, GPS, and even satellite systems like GOES-16 and Starlink.
+    \n
+    Potential Effects on Humans:\n
+    \n
+    Loss of satellite-based communications
+    GPS disruptions
+    Radio signal interference
+    Possible power grid instability in some regions.
+    For more, visit ESA’s page.",
+},
+{
+    "id": "670259d3ccdeb8c80343ded7",
+    "title": "Sun Releases Strong Solar Flare",
+    "description": "The Sun emitted a strong solar flare, peaking at 8:18 a.m. ET on Oct. 3, 2024. NASA’s Solar Dynamics Observatory, which watches the Sun constantly, captured an image 
+                    of the event.",
+    "url": "https://blogs.nasa.gov/solarcycle25/",
+    "urlToImage": "https://blogs.nasa.gov/solarcycle25/wp-content/uploads/sites/304/2024/09/SDO_9-14-24_X4pt5_171-304-_500.2024-09-15-10_58_06.gif?w=500",
+},
+{
+    "id": "67025a11ccdeb8c80343ded9",
+    "title": "The Impact of Solar Storms on Satellites",
+    "description": "How solar storms, particularly coronal mass ejections (CMEs), can affect satellites in low Earth orbit. It explains how
+                    increased drag due to atmospheric swelling can lower satellite orbits, potentially shortening their operational life.",
+    "url": "https://www.earthdata.nasa.gov/learn/articles/sun-satellite-interactions",
+    "urlToImage": "https://www.earthdata.nasa.gov/s3fs-public/styles/medium_half_480px_/public/2024-06/leo-orbital-debris_art.jpg?VersionId=C8R9QXt4.GXSZFT.JEttJIBRjjIQAVe3&itok=f2hnzZQv",
+},
+{
+    "id": "67025a4dccdeb8c80343dedb",
+    "title": "Historic Geomagnetic Storm Dazzles",
+    "description": "Insights into the geomagnetic storm of May 2024, which was the most powerful in over two decades. It explains how the 
+                    storm caused spectacular auroras visible far south and discusses how scientists study such events. The article also highlights the role of 
+                    citizen science in tracking auroras through NASA's Aurorasaurus project.",
+    "url": "https://earthobservatory.nasa.gov/images/152815/historic-geomagnetic-storm-dazzles",
+    "urlToImage": "https://eoimages.gsfc.nasa.gov/images/imagerecords/152000/152815/auroraborealis_vir_20240511.jpg",
+},
+{
+    "id": "67025a9accdeb8c80343dedd",
+    "title": "AI Predictions May Give Time to Prepare for Solar Storms",
+    "description": "NASA's AI-based model can provide early warnings for solar storms, allowing for preparations against potential \n
+                    disruptions to power grids, communication systems, and satellites. 
+                    It emphasizes the importance of predicting solar storms like the one in 
+                    May 2024, which had the potential for significant impacts on Earth’s infrastructure.",
+    "url": "https://www.nasa.gov/science-research/heliophysics/nasa-enabled-ai-predictions-may-give-time-to-prepare-for-solar-storms/",
+    "urlToImage": "https://www.nasa.gov/wp-content/uploads/2023/03/m7.3-flare-rotated_0.jpeg",
+},
