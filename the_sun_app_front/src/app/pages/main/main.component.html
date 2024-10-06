@@ -1,28 +1,4 @@
-<article class="w-full min-h-screen bg-gradient-to-b from-black from-60% to-[#f2cd4c] to-100%">
-  <article class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 text-white">
-    <section class="w-full min-h-56 flex flex-col justify-center gap-8 p-4">
-      <h1 class="text-4xl font-bold">{{main?.title}}</h1>
-      <h5 class="text-2xl text-gray-300">{{main?.description}}</h5>
-      <p class="text-xl description">
-        {{muckData[muckDataIndex].p1}}
-      </p>
-      <p class="text-xl description">
-        {{muckData[muckDataIndex].p2}}
-      </p>
-
-    </section>
-    <section class="flex flex-col gap-6 w-full min-h-56 p-4">
-      <div
-        class="w-full border rounded-lg p-4 hover:cursor-pointer hover:bg-gray-800  transition-all duration-200 ease-in-out">
-        <p>Go to the article: </p>
-        <a href="{{main?.url}}" target="_blank" class="border-b">
-          {{main?.url}}
-        </a>
-      </div>
-
-      <img class="w-full aspect-auto object-cover rounded-lg" src="{{main?.urlToImage}}" alt="{{main?.title}}">
-    </section>
-  </article>
+<article class="w-full min-h-screen bg-gradient-to-b from-black from-60% to-[#f2cd4c] to-100% p-8">
 
   <article class="max-w-2xl mx-auto my-6">
 
@@ -58,5 +34,32 @@
       </li>
     </ul>
   </article>
+
+
+  <article class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 text-white">
+    <section class="w-full min-h-56 flex flex-col justify-center gap-8 p-4">
+      <h1 class="text-4xl font-bold">{{main?.title}}</h1>
+      <!-- <h5 class="text-2xl text-gray-300">{{main?.description}}</h5> -->
+
+      <p class="text-xl description">
+        {{muckData[muckDataIndex].s1}}
+      </p>
+
+
+    </section>
+    <section class="flex flex-col gap-6 w-full min-h-56 p-4">
+      <div
+        class="w-full border rounded-lg p-4 hover:cursor-pointer hover:bg-gray-800  transition-all duration-200 ease-in-out">
+        <p>Go to the article: </p>
+        <a href="{{main?.url}}" target="_blank" class="border-b">
+          {{main?.url}}
+        </a>
+      </div>
+
+      <img class="w-full aspect-auto object-cover rounded-lg" src="{{main?.urlToImage}}" alt="{{main?.title}}">
+    </section>
+  </article>
+
+
 
 </article>
