@@ -5,7 +5,7 @@ import { MainComponent } from './pages/main/main.component';
 import { AboutComponent } from './pages/about/about.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'article/:id', component: ArticleComponent },
   { path: 'main', component: MainComponent },

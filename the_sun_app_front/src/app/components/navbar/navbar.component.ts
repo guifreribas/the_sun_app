@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterModule,
+} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +16,21 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent {
   public isMenuOpen = false;
+  public isHome = true;
+
+  private router = inject(Router);
+  private activatedRoute = inject(ActivatedRoute);
+
+  ngOnInit() {
+    this.activatedRoute.fragment.subscribe((fragment: string | null) => {
+      if (fragment) this.jumpToSection(fragment);
+    });
+  }
+
+  jumpToSection(section: string | null) {
+    if (section)
+      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+  }
 
   onOpenMenu() {
     this.isMenuOpen = true;
