@@ -5,6 +5,8 @@ import { Article, GetArticlesResponse } from '../../models/article';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MainService } from '../../services/main.service';
+import { Main } from '../../models/main';
 
 const muckData = [
   {
@@ -40,16 +42,18 @@ export class MainComponent {
 
   public article: Article | undefined;
   public articles: Article[] | undefined;
+  public main: Main | undefined;
   public selector = new FormControl();
 
   public muckData = muckData;
   public muckDataIndex = 0;
 
   private articleService = inject(ArticleService);
+  private mainService = inject(MainService);
 
   ngOnInit() {
     console.log('Main');
-    this.getArticles();
+    this.getMain();
   }
 
   async getArticle() {
@@ -66,7 +70,14 @@ export class MainComponent {
     console.log(articles);
   }
 
+  async getMain() {
+    const main = await firstValueFrom(this.mainService.getMainArticle());
+    this.main = main.data;
+    console.log(main);
+  }
+
   onSelectTarget(target: number) {
+    this.muckDataIndex = target - 1;
     const classes = ['active', 'text-gray-900', 'bg-gray-100'];
     classes.forEach((className) => {
       this.button1.nativeElement.classList.remove(className);

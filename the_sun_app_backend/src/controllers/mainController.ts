@@ -1,6 +1,6 @@
 //import mongoose from "mongoose";
 import { Request, Response } from "express";
-import { postMain, getMain } from "../services/mainServices.js";
+import { postMain, getMain, modify } from "../services/mainServices.js";
 import { OK } from "../constants/http.js";
 
 export default class MainController {
@@ -51,5 +51,23 @@ export default class MainController {
     }
     const url = MainController.formatDateForURL(date);
     res.status(OK).json(url);
+  }
+
+  async modifyMainArticle(req: Request, res: Response) {
+    const { articleId, prompt, summary } = req.body;
+    if (!articleId || !prompt || !summary) {
+      res.status(400).json({ message: "All fields are required" });
+      return;
+    }
+    const data = { articleId, prompt, summary };
+    console.log(data);
+    const articleModyfied = await modify(data);
+    if (!articleModyfied) {
+      res
+        .status(404)
+        .json({ message: "There was an error updating main article" });
+    }
+    res.status(200).json(articleModyfied);
+    return;
   }
 }

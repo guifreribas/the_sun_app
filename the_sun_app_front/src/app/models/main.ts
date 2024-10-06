@@ -8,3 +8,8 @@ export interface Main extends Article {
   createdAt: Date;
   deletedAt: Date;
 }
+
+export interface GetMainResponse {
+  data: Main;
+  message: string;
+}
