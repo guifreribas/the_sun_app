@@ -15,7 +15,7 @@
     <ul class="hidden text-sm font-medium text-center text-gray-500 rounded-lg shadow sm:flex">
       <li class="w-full focus-within:z-10">
         <button (click)="onSelectTarget(1)" #button1
-          class="inline-block w-full p-4 text-gray-900 bg-gray-100 border-r border-gray-200 hover:text-gray-700 rounded-s-lg focus:ring-4 focus:ring-blue-300 active focus:outline-none"
+          class="inline-block w-full p-4 text-gray-900 bg-white border-r border-gray-200 hover:text-gray-700 rounded-s-lg focus:ring-4 focus:ring-blue-300 active focus:outline-none"
           aria-current="page">3/7 years</button>
       </li>
       <li class="w-full focus-within:z-10">
@@ -25,7 +25,7 @@
       </li>
       <li class="w-full focus-within:z-10">
         <button (click)="onSelectTarget(3)" #button3
-          class="inline-block w-full p-4 bg-white border-r border-gray-200 hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none">
+          class="inline-block w-full p-4 bg-gray-100 border-r border-gray-200 hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none">
           +16 years</button>
       </li>
       <li class="w-full focus-within:z-10">
@@ -39,11 +39,16 @@
   <article class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 text-white">
     <section class="w-full min-h-56 flex flex-col justify-center gap-8 p-4">
       <h1 class="text-4xl font-bold">{{main?.title}}</h1>
-      <!-- <h5 class="text-2xl text-gray-300">{{main?.description}}</h5> -->
 
-      <p class="text-xl description">
-        {{muckData[muckDataIndex].s1}}
-      </p>
+      <section class="flex flex-col gap-2 w-full">
+
+        @for(data of muckData()[muckDataIndex].s1; track $index) {
+        <p class="text-xl description">
+          {{data}}
+        </p>
+        }
+      </section>
+
 
 
     </section>
@@ -56,7 +61,8 @@
         </a>
       </div>
 
-      <img class="w-full aspect-auto object-cover rounded-lg" src="{{main?.urlToImage}}" alt="{{main?.title}}">
+      <video class="w-full aspect-auto object-cover rounded-lg" muted loop controls autoplay
+        src="{{main?.urlToImage}}"></video>
     </section>
   </article>
 

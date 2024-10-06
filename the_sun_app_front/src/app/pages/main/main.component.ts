@@ -1,4 +1,11 @@
-import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  inject,
+  signal,
+  ViewChild,
+  WritableSignal,
+} from '@angular/core';
 import { ArticleService } from '../../services/article.service';
 import { firstValueFrom } from 'rxjs';
 import { Article, GetArticlesResponse } from '../../models/article';
@@ -7,27 +14,18 @@ import { RouterModule } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MainService } from '../../services/main.service';
 import { Main } from '../../models/main';
+import { initFlowbite } from 'flowbite';
+
+interface MuckDataItem {
+  s1: string[];
+}
 
 const muckData = [
   {
-    s1: `In May 2024, the Sun had a big storm that made bright lights in the sky, called auroras, appear in places that don't usually see them, like Greece. The storm also caused some problems for satellites, making things like GPS and radio not work well for a little while.
-
-        Effects for humans:
-
-        GPS (like maps on phones) might not work well
-        Trouble with radios and internet from satellites
-        Lights might flicker or go out in some areas
-        Prompt ( science)
-        I want a summary of this article, make it simple to understand for a scientists audience, tell me the main events and make me a list of possible effects for humans such as lost of signal for communications of satelite affection. `,
+    s1: "In May 2024, the Sun had a big storm that made bright lights in the sky, called auroras, appear in places that don't usually see them, like Greece. The storm also caused some problems for satellites, making things like GPS and radio not work well for a little while.\n\n Effects for humans: \n GPS (like maps on phones) might not work well\n Trouble with radios and internet from satellites\n Lights might flicker or go out in some areas\n Prompt ( science)\n I want a summary of this article, make it simple to understand for a scientists audience, tell me the main events and make me a list of possible effects for humans such as lost of signal for communications of satelite affection.\n ",
   },
   {
-    s1: `In May 2024, the Sun released very strong solar storms that caused big changes in Earth's magnetic field. These storms were powerful enough to create beautiful auroras (northern lights) in places that don't normally see them, like Greece. They also caused problems with satellites, making it hard to use things like GPS and some radio signals.
-
-        Possible effects on humans:
-
-        Loss of satellite signals (GPS, internet)
-        Problems with radio communications
-        Possible power outages in some areas`,
+    s1: "In May 2024, the Sun released very strong solar storms that caused big changes in Earth's magnetic field. These storms were powerful enough to create beautiful auroras (northern lights) in places that don't normally see them, like Greece.\n They also caused problems with satellites, making it hard to use things like GPS and some radio signals.\n Possible effects on humans: \nLoss of satellite signals (GPS, internet)\n Problems with radio communications \n Possible power outages in some areas",
   },
   {
     s1: `In May 2024, powerful solar storms took place, including solar flares and Coronal Mass Ejections (CMEs) from May 10–13. These storms led to a significant geomagnetic event, the strongest since 1989. This event caused auroras to be visible much farther south than usual, such as in Greece. The geomagnetic storm disrupted communications, affecting radio signals, GPS, and even satellite systems like GOES-16 and Starlink. Potential Effects on Humans: Loss of satellite-based communications GPS disruptions Radio signal interference Possible power grid instability in some regions. For more, visit ESA’s page.`,
@@ -61,16 +59,28 @@ export class MainComponent {
   public main: Main | undefined;
   public selector = new FormControl();
 
-  public muckData = muckData;
+  public muckData: WritableSignal<MuckDataItem[]> = signal([]);
   public muckDataIndex = 2;
 
   private articleService = inject(ArticleService);
   private mainService = inject(MainService);
 
   ngOnInit() {
-    console.log('Main');
+    setTimeout(() => {
+      initFlowbite();
+    }, 100);
+
     this.getMain();
+
+    console.log('muckData', this.muckData);
+    const muckDataParsed = muckData.map((item) => {
+      const lines = item.s1.split(/\n/);
+      return { ...item, s1: lines };
+    });
+    this.muckData.set(muckDataParsed);
   }
+
+  ngAfterViewInit() {}
 
   async getArticle() {
     const article = await firstValueFrom(
