@@ -28,16 +28,10 @@ const muckData = [
     s1: "In May 2024, the Sun released very strong solar storms that caused big changes in Earth's magnetic field. These storms were powerful enough to create beautiful auroras (northern lights) in places that don't normally see them, like Greece.\n They also caused problems with satellites, making it hard to use things like GPS and some radio signals.\n Possible effects on humans: \nLoss of satellite signals (GPS, internet)\n Problems with radio communications \n Possible power outages in some areas",
   },
   {
-    s1: `In May 2024, powerful solar storms took place, including solar flares and Coronal Mass Ejections (CMEs) from May 10–13. These storms led to a significant geomagnetic event, the strongest since 1989. This event caused auroras to be visible much farther south than usual, such as in Greece. The geomagnetic storm disrupted communications, affecting radio signals, GPS, and even satellite systems like GOES-16 and Starlink. Potential Effects on Humans: Loss of satellite-based communications GPS disruptions Radio signal interference Possible power grid instability in some regions. For more, visit ESA’s page.`,
+    s1: 'In May 2024, powerful solar storms took place, including solar flares and Coronal Mass Ejections (CMEs) from May 10–13. \n These storms led to a significant geomagnetic event, the strongest since 1989. \n This event caused auroras to be visible much farther south than usual, such as in Greece. The geomagnetic storm disrupted communications, affecting radio signals, GPS, and even satellite systems like GOES-16 and Starlink. \n\n Potential Effects on Humans: \n Loss of satellite-based communications GPS disruptions\n Radio signal interference\n Possible power grid instability in some regions. For more, visit ESA’s page.',
   },
   {
-    s1: `The solar storms of May 2024 featured intense geomagnetic disturbances, including powerful solar flares and coronal mass ejections (CMEs), with the strongest geomagnetic storm since 1989. These events caused significant impacts on Earth's radiation belts and satellite systems. Scientists monitored disruptions to GPS, satellite communications, and power grids.
-
-        Possible effects on humans:
-
-        Loss of satellite communication (GPS, internet)
-        Radio signal interference
-        Potential disruptions to power grids`,
+    s1: "The solar storms of May 2024 featured intense geomagnetic disturbances, including powerful solar flares and coronal mass ejections (CMEs), with the strongest geomagnetic storm since 1989.\n These events caused significant impacts on Earth's radiation belts and satellite systems. Scientists monitored disruptions to GPS, satellite communications, and power grids.\n\n Possible effects on humans:\n\n Loss of satellite communication (GPS, internet)\n Radio signal interference\n Potential disruptions to power grids\n",
   },
 ];
 
