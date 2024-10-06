@@ -5,7 +5,7 @@
     <div class="sm:hidden mx-8">
       <label for="tabs" class="sr-only">Select your age</label>
       <select id="tabs" [formControl]="selector"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
         <option>3/7 years</option>
         <option>8/16 years</option>
         <option>+16 years</option>
@@ -15,22 +15,22 @@
     <ul class="hidden text-sm font-medium text-center text-gray-500 rounded-lg shadow sm:flex">
       <li class="w-full focus-within:z-10">
         <button (click)="onSelectTarget(1)" #button1
-          class="inline-block w-full p-4 text-gray-900 bg-white border-r border-gray-200 hover:text-gray-700 rounded-s-lg focus:ring-4 focus:ring-blue-300 active focus:outline-none"
+          class="inline-block w-full p-3  bg-white  border-r border-gray-200 hover:text-gray-700 rounded-s-lg focus:ring-4 focus:ring-blue-300 active focus:outline-none"
           aria-current="page">3/7 years</button>
       </li>
       <li class="w-full focus-within:z-10">
         <button (click)="onSelectTarget(2)" #button2
-          class="inline-block w-full p-4 bg-white border-r border-gray-200 hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none">
+          class="inline-block w-full p-3 bg-white border-r border-gray-200 hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none">
           8/16 years</button>
       </li>
       <li class="w-full focus-within:z-10">
         <button (click)="onSelectTarget(3)" #button3
-          class="inline-block w-full p-4 bg-gray-100 border-r border-gray-200 hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none">
+          class="inline-block w-full p-3 text-gray-900 bg-gray-100 border-r  border-gray-200 hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none">
           +16 years</button>
       </li>
       <li class="w-full focus-within:z-10">
         <button (click)="onSelectTarget(4)" #button4
-          class="inline-block w-full p-4 bg-white border-s-0 border-gray-200 rounded-e-lg hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300">Scientists</button>
+          class="inline-block w-full p-3 bg-white border-s-0 border-gray-200 rounded-e-lg hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300">Scientists</button>
       </li>
     </ul>
   </article>

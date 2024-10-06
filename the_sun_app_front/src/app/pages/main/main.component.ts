@@ -116,12 +116,12 @@ export class MainComponent {
       this.button1.nativeElement.classList.add(
         ...['active', 'text-gray-900', 'bg-gray-100']
       );
-      this.button4.nativeElement.classList.add('bg-white');
+      this.button3.nativeElement.classList.add('bg-white');
     } else if (target === 2) {
       this.button2.nativeElement.classList.add(
         ...['active', 'text-gray-900', 'bg-gray-100']
       );
-      this.button4.nativeElement.classList.add('bg-white');
+      this.button3.nativeElement.classList.add('bg-white');
     } else if (target === 3) {
       this.button3.nativeElement.classList.add(
         ...['active', 'text-gray-900', 'bg-gray-100']
@@ -130,7 +130,7 @@ export class MainComponent {
       this.button4.nativeElement.classList.add(
         ...['active', 'text-gray-900', 'bg-gray-100']
       );
-      this.button4.nativeElement.classList.add('bg-white');
+      this.button3.nativeElement.classList.add('bg-white');
     }
   }
 }
