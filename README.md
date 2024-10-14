@@ -1,6 +1,6 @@
 # The Sun App
 
-The Sun App is a full-stack web application built using Angular for the frontend and Node.js with Express for the backend. It serves as an application designed to [brief description of app functionality or purpose].
+The Sun App is a full-stack web application built using Angular for the frontend and Node.js with Express for the backend. It serves as an application designed to bring easy-reading articles using NASA's information about geomagnetic storms.
 
 ## Table of Contents
 
